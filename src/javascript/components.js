@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const createIntro = (name, age) =>
   `MY NAME IS ${name} ${age}YO AND THIS IS MY RESUME/CV`;
 
