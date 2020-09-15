@@ -6,6 +6,7 @@
       name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Resume</title>
   </head>
@@ -13,30 +14,19 @@
     <div class="container">
       <header class="header">
         <figure>
-          <img
-            src="https://inews.gtimg.com/newsapp_match/0/3581582328/0"
-            alt=""
-            class="photo"
-          />
+          <img src="" alt="photo" class="photo" id="avatar" />
         </figure>
         <h1>HELLO,</h1>
-        <h2>MY NAME IS <span id="name"></span> AND THIS IS MY RESUME/CV</h2>
+        <h2 id="intro">MY NAME IS AND THIS IS MY RESUME/CV</h2>
         <hr noshade="true" />
       </header>
       <main class="main">
         <section class="about-me">
           <h2>ABOUT ME</h2>
-          <p>about me section</p>
+          <p id="self-desc">about me section</p>
         </section>
-        <section class="educations">
+        <section class="educations" id="educations">
           <h2>EDUCATION</h2>
-          <div class="education">
-            <h4 class="edu-year">1990</h4>
-            <div class="edu-content">
-              <h4 class="edu-title">title</h4>
-              <p class="edu-desc">desc</p>
-            </div>
-          </div>
         </section>
       </main>
     </div>
