@@ -1,0 +1,20 @@
+.main {
+  h2 {
+    color: $title-color;
+    font-weight: bold;
+  }
+
+  .education {
+    display: grid;
+    grid-template-columns: 100px auto;
+    .edu-content {
+      background: $gray-light;
+      margin: 5px;
+    }
+  }
+
+  .edu-title,
+  .edu-desc {
+    margin: 10px 0;
+  }
+}
