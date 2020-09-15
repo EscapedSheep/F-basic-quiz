@@ -14,12 +14,9 @@ const url = "http://localhost:8080/users";
 export const getUser = async (id) => {
   try {
     const response = await fetch(`${url}/${id}`);
-    const jsonRes = await response.json();
-    $("#intro").html(createIntro(jsonRes.name, jsonRes.age));
-    $("#avatar").attr("src", jsonRes.avatar);
-    $("#self-desc").html(jsonRes.description);
+    return await response.json();
   } catch (e) {
-    console.log(e);
+    return e;
   }
 };
 
@@ -27,13 +24,23 @@ export const getEducations = async (id) => {
   try {
     const response = await fetch(`${url}/${id}/educations`);
     const jsonRes = await response.json();
-    jsonRes.sort((eduFirst, eduSecond) => eduFirst.year - eduSecond.year);
-    jsonRes.forEach((edu) =>
-      $("#educations").append(
-        createEducation(edu.year, edu.title, edu.description)
-      )
-    );
+    return jsonRes;
   } catch (e) {
-    console.log(e);
+    return e;
   }
+};
+
+export const renderUser = (user) => {
+  $("#intro").html(createIntro(user.name, user.age));
+  $("#avatar").attr("src", user.avatar);
+  $("#self-desc").html(user.description);
+};
+
+export const renderEducations = (educations) => {
+  educations.sort((eduFirst, eduSecond) => eduFirst.year - eduSecond.year);
+  educations.forEach((edu) =>
+    $("#educations").append(
+      createEducation(edu.year, edu.title, edu.description)
+    )
+  );
 };
