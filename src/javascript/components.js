@@ -23,8 +23,7 @@ export const getUser = async (id) => {
 export const getEducations = async (id) => {
   try {
     const response = await fetch(`${url}/${id}/educations`);
-    const jsonRes = await response.json();
-    return jsonRes;
+    return await response.json();
   } catch (e) {
     return e;
   }
