@@ -2,6 +2,7 @@ const createIntro = (name, age) =>
   `MY NAME IS ${name} ${age}YO AND THIS IS MY RESUME/CV`;
 
 const createEducation = (year, title, desc) =>
+  // TODO feedback: education用ul li更符合语义
   `<div class="education">
      <h4 class="edu-year">${year}</h4>
      <div class="edu-content">
@@ -38,6 +39,7 @@ export const renderUser = (user) => {
 export const renderEducations = (educations) => {
   educations.sort((eduFirst, eduSecond) => eduFirst.year - eduSecond.year);
   educations.forEach((edu) =>
+    // TODO feedback: 在for循环中，每次都要操作DOM，影响性能，不推荐这样做
     $("#educations").append(
       createEducation(edu.year, edu.title, edu.description)
     )
